@@ -498,6 +498,20 @@ initDuas();
 // --- PWA Add to Home Screen ---
 let deferredPrompt;
 const installBtn = document.getElementById('install-app-btn');
+const iosModal = document.getElementById('ios-install-modal');
+const closeIosModal = document.getElementById('close-ios-modal');
+
+// Detect iOS and check if already installed
+const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test(userAgent);
+};
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+// If it's iOS and not installed, show the button
+if (isIos() && !isInStandaloneMode()) {
+    if (installBtn) installBtn.classList.remove('hidden');
+}
 
 window.addEventListener('beforeinstallprompt', (e) => {
     // Prevent the mini-infobar from appearing on mobile
@@ -512,10 +526,13 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 if (installBtn) {
     installBtn.addEventListener('click', async () => {
-        // Hide the app provided install promotion
-        installBtn.classList.add('hidden');
-        // Show the install prompt
-        if (deferredPrompt) {
+        if (isIos()) {
+            // Show custom iOS instructions
+            if (iosModal) iosModal.classList.remove('hidden');
+        } else if (deferredPrompt) {
+            // Hide the app provided install promotion
+            installBtn.classList.add('hidden');
+            // Show the install prompt
             deferredPrompt.prompt();
             // Wait for the user to respond to the prompt
             const { outcome } = await deferredPrompt.userChoice;
@@ -523,6 +540,12 @@ if (installBtn) {
             // We've used the prompt, and can't use it again, throw it away
             deferredPrompt = null;
         }
+    });
+}
+
+if (closeIosModal) {
+    closeIosModal.addEventListener('click', () => {
+        if (iosModal) iosModal.classList.add('hidden');
     });
 }
 

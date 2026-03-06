@@ -461,6 +461,35 @@
             </section>
         </main>
 
+        <!-- iOS Install Modal Overlay -->
+        <div id="ios-install-modal" class="hidden"
+            style="position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; align-items: flex-end; justify-content: center; padding: 20px; text-align: center;">
+            <div
+                style="background: rgba(18, 42, 24, 0.95); border: 1px solid var(--primary-gold); border-radius: 20px; padding: 24px; width: 100%; max-width: 400px; transform: translateY(0); margin-bottom: 80px;">
+                <h3 style="color: var(--primary-gold); margin-bottom: 12px;">Install Muslim App</h3>
+                <p style="color: var(--text-main); font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">
+                    Install this app on your iPhone for offline access and full-screen experience.
+                </p>
+                <div
+                    style="background: rgba(0,0,0,0.3); padding: 16px; border-radius: 12px; margin-bottom: 20px; text-align: left;">
+                    <p style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
+                        <span
+                            style="background: white; color: black; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem;">1</span>
+                        Tap the <strong>Share</strong> button at the bottom of Safari.
+                    </p>
+                    <p style="display: flex; align-items: center; gap: 12px;">
+                        <span
+                            style="background: white; color: black; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem;">2</span>
+                        Scroll down and tap <strong>Add to Home Screen</strong>.
+                    </p>
+                </div>
+                <button id="close-ios-modal"
+                    style="background: var(--primary-gold); color: #000; border: none; border-radius: 12px; padding: 12px 24px; font-weight: 600; font-size: 1rem; cursor: pointer; width: 100%;">
+                    Got it
+                </button>
+            </div>
+        </div>
+
         <nav class="bottom-nav">
             <div class="nav-item active" onclick="switchView('home')">
                 <svg class="icon">
