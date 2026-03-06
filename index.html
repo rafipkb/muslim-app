@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Muslim Companion</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#122a18">
+    <link rel="apple-touch-icon" href="icon-192.png">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
@@ -184,6 +187,11 @@
                     </svg>
                     <span id="current-city">Detecting Location...</span>
                 </div>
+                <!-- PWA Install Button -->
+                <button id="install-app-btn" class="hidden"
+                    style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: background 0.2s;">
+                    Install App
+                </button>
                 <div class="date-box">
                     <span id="gregorian-date"></span>
                     <span id="hijri-date" class="hijri"></span>
