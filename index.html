@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Muslim Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Amiri:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <svg width="0" height="0" class="hidden">
+        <defs>
+            <symbol id="icon-mosque" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C12 2 10 5 10 7C10 8.1 10.9 9 12 9C13.1 9 14 8.1 14 7C14 5 12 2 12 2Z"></path>
+                <path d="M4 14V22H20V14"></path>
+                <path d="M4 14C4 12 6.5 10 12 10C17.5 10 20 12 20 14"></path>
+                <path d="M12 10V22"></path>
+                <path d="M8 12L8 22"></path>
+                <path d="M16 12L16 22"></path>
+            </symbol>
+            <symbol id="icon-tasbeeh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="10" r="7" stroke-dasharray="2 3"></circle>
+                <path d="M12 17V22M10 20H14"></path>
+            </symbol>
+            <symbol id="icon-quran" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                <path d="M12 8A2 2 0 1 0 12 12A2 2 0 1 0 12 8Z"></path>
+                <path d="M14 8L12 10"></path>
+            </symbol>
+            <symbol id="icon-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </symbol>
+            <symbol id="icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </symbol>
+            <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </symbol>
+            <symbol id="icon-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+            </symbol>
+            <symbol id="icon-sun" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </symbol>
+            <symbol id="icon-moon" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </symbol>
+            <symbol id="icon-search" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </symbol>
+            <symbol id="icon-back" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </symbol>
+            <symbol id="icon-font-up" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+                <line x1="8" y1="20" x2="16" y2="20"></line>
+                <path d="M20 12 L20 18 M17 15 L23 15"></path>
+            </symbol>
+            <symbol id="icon-font-down" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                <line x1="12" y1="4" x2="12" y2="20"></line>
+                <line x1="8" y1="20" x2="16" y2="20"></line>
+                <line x1="18" y1="15" x2="22" y2="15"></line>
+            </symbol>
+            <symbol id="icon-reset" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+            </symbol>
+            <symbol id="icon-kaaba" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C11.5 2 11 2.5 11 3L11 9.5C11 10 11.5 10.5 12 10.5C12.5 10.5 13 10 13 9.5L13 3C13 2.5 12.5 2 12 2Z">
+                </path>
+                <path d="M7 11L17 11L17 21L7 21Z"></path>
+                <path d="M7 13L17 13M7 15L17 15M7 17L17 17M7 19L17 19" stroke="var(--primary-gold)" stroke-width="1">
+                </path>
+            </symbol>
+            <symbol id="icon-dua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"></path>
+                <path d="M12 21v-9"></path>
+                <path d="M3 12c0-1.7 1.3-3 3-3h12c1.7 0 3 1.3 3 3"></path>
+            </symbol>
+            <symbol id="icon-sunrise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v8"></path>
+                <path d="m4.93 10.93 1.41 1.41"></path>
+                <path d="M2 18h2"></path>
+                <path d="M20 18h2"></path>
+                <path d="m19.07 10.93-1.41 1.41"></path>
+                <path d="M22 22H2"></path>
+                <path d="m8 6 4-4 4 4"></path>
+                <path d="M16 18a4 4 0 0 0-8 0"></path>
+            </symbol>
+            <symbol id="icon-afternoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M20 12h2"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+                <path d="m15.97 17.25 1.62-1.54"></path>
+                <path d="m7.5 19.33-1.84.49"></path>
+                <path d="m4.57 14.63-1.41 1.41"></path>
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 22v-2"></path>
+            </symbol>
+            <symbol id="icon-sunset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 10v12"></path>
+                <path d="m4.93 10.93 1.41 1.41"></path>
+                <path d="M2 18h2"></path>
+                <path d="M20 18h2"></path>
+                <path d="m19.07 10.93-1.41 1.41"></path>
+                <path d="M22 22H2"></path>
+                <path d="m16 5-4 4-4-4"></path>
+                <path d="M16 18a4 4 0 0 0-8 0"></path>
+            </symbol>
+            <symbol id="icon-zakat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+                <path d="M12 18V6"></path>
+            </symbol>
+            <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+            </symbol>
+            <symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+            </symbol>
+        </defs>
+    </svg>
+    <div class="app-container">
+        <!-- Background Elements -->
+        <div class="bg-blur green-blur"></div>
+        <div class="bg-blur gold-blur"></div>
+
+        <header>
+            <div class="header-content">
+                <div class="location-box">
+                    <svg class="icon">
+                        <use href="#icon-location"></use>
+                    </svg>
+                    <span id="current-city">Detecting Location...</span>
+                </div>
+                <div class="date-box">
+                    <span id="gregorian-date"></span>
+                    <span id="hijri-date" class="hijri"></span>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Home View -->
+            <section id="home-view" class="view active">
+                <div class="prayer-card main-card">
+                    <div class="prayer-status">
+                        <span id="next-prayer-name">Next Prayer</span>
+                        <h2 id="next-prayer-time">--:--</h2>
+                        <p id="time-remaining">Calculating...</p>
+                    </div>
+                </div>
+
+                <div class="verse-card secondary-card">
+                    <div class="card-header">
+                        <svg class="icon">
+                            <use href="#icon-book-open"></use>
+                        </svg>
+                        <span>Verse of the Day</span>
+                    </div>
+                    <p id="verse-arabic" class="arabic"></p>
+                    <p id="verse-translation"></p>
+                    <p id="verse-reference" class="reference"></p>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-item" onclick="switchView('quran')">
+                        <svg class="icon">
+                            <use href="#icon-quran"></use>
+                        </svg>
+                        <span>Quran</span>
+                    </div>
+                    <div class="stat-item" onclick="switchView('tasbeeh')">
+                        <svg class="icon">
+                            <use href="#icon-tasbeeh"></use>
+                        </svg>
+                        <span>Tasbeeh</span>
+                    </div>
+                    <div class="stat-item" onclick="switchView('qibla')">
+                        <svg class="icon">
+                            <use href="#icon-compass"></use>
+                        </svg>
+                        <span>Qibla</span>
+                    </div>
+                    <div class="stat-item" onclick="switchView('duas')">
+                        <svg class="icon">
+                            <use href="#icon-dua"></use>
+                        </svg>
+                        <span>Duas</span>
+                    </div>
+                    <div class="stat-item" onclick="switchView('zakat')">
+                        <svg class="icon">
+                            <use href="#icon-zakat"></use>
+                        </svg>
+                        <span>Zakat</span>
+                    </div>
+                    <div class="stat-item" onclick="switchView('calendar')">
+                        <svg class="icon">
+                            <use href="#icon-calendar"></use>
+                        </svg>
+                        <span>Calendar</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Duas View -->
+            <section id="duas-view" class="view">
+                <div class="duas-header">
+                    <h2>Daily Duas</h2>
+                    <p class="subtitle">Prophetic Supplications</p>
+                </div>
+                <div class="duas-category-grid" id="duas-category-list">
+                    <!-- Dua categories injected here -->
+                </div>
+                <div id="dua-detail-container" class="hidden">
+                    <div class="reader-header">
+                        <button id="back-to-duas" class="action-btn">
+                            <svg class="icon">
+                                <use href="#icon-back"></use>
+                            </svg>
+                        </button>
+                        <h3 id="current-dua-category">Category Name</h3>
+                        <div style="width: 24px;"></div> <!-- Spacer -->
+                    </div>
+                    <div class="dua-list" id="dua-list">
+                        <!-- Duas injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Zakat View -->
+            <section id="zakat-view" class="view">
+                <div class="zakat-header text-center">
+                    <svg class="icon">
+                        <use href="#icon-zakat"></use>
+                    </svg>
+                    <h2>Zakat Calculator</h2>
+                    <p class="subtitle">Calculate your 2.5% obligation</p>
+                </div>
+                <div class="zakat-container">
+                    <div class="zakat-form">
+                        <div class="input-group">
+                            <label>Cash & Bank Balances</label>
+                            <input type="number" id="zakat-cash" placeholder="0.00" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Gold & Silver Value</label>
+                            <input type="number" id="zakat-gold" placeholder="0.00" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Investments & Shares</label>
+                            <input type="number" id="zakat-invest" placeholder="0.00" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Business Assets</label>
+                            <input type="number" id="zakat-business" placeholder="0.00" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Liabilities / Debts (to subtract)</label>
+                            <input type="number" id="zakat-liabilities" placeholder="0.00" min="0">
+                        </div>
+                        <button id="calculate-zakat-btn" class="calibrate-btn"
+                            style="width: 100%; margin-top: 10px;">Calculate Zakat</button>
+                    </div>
+                    <div class="zakat-result-card hidden" id="zakat-result">
+                        <p class="subtitle">Total Eligible Assets</p>
+                        <h3 id="zakat-total-assets">0.00</h3>
+                        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 16px 0;"></div>
+                        <p class="subtitle" style="color: var(--primary-emerald);">Your Zakat (2.5%)</p>
+                        <h2 id="zakat-payable"
+                            style="color: var(--primary-emerald); font-size: 2.5rem; margin-top: 8px;">0.00</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings View -->
+            <section id="settings-view" class="view">
+                <div class="zakat-header text-center">
+                    <svg class="icon">
+                        <use href="#icon-settings"></use>
+                    </svg>
+                    <h2>Settings</h2>
+                </div>
+                <div class="zakat-container">
+                    <div class="zakat-form">
+                        <div class="input-group"
+                            style="display: flex; justify-content: space-between; align-items: center;">
+                            <label style="margin: 0; font-size: 1.1rem; color: var(--text-main);">Dark Mode</label>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-switch" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0;"></div>
+                        <div class="input-group">
+                            <label>Prayer Calculation Method</label>
+                            <select id="calc-method">
+                                <option value="2" style="color: black;">ISNA (Islamic Society of North America)</option>
+                                <option value="3" style="color: black;">Muslim World League (MWL)</option>
+                                <option value="4" style="color: black;">Umm Al-Qura University, Makkah</option>
+                                <option value="5" style="color: black;">Egyptian General Authority of Survey</option>
+                                <option value="8" style="color: black;">Gulf Region</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tasbeeh View -->
+            <section id="tasbeeh-view" class="view">
+                <div class="tasbeeh-container">
+                    <div class="dhikr-selector">
+                        <select id="dhikr-preset">
+                            <option value="33">Subhan Allah (33)</option>
+                            <option value="33">Alhamdulillah (33)</option>
+                            <option value="33">Allahu Akbar (33)</option>
+                            <option value="100">Astaghfirullah (100)</option>
+                            <option value="0">Custom</option>
+                        </select>
+                    </div>
+                    <div class="counter-display">
+                        <span id="tasbeeh-count">0</span>
+                        <span id="tasbeeh-target">/ 33</span>
+                    </div>
+                    <div class="tap-area" id="tasbeeh-tap">
+                        <div class="tap-circle"></div>
+                    </div>
+                    <div class="tasbeeh-actions">
+                        <button id="reset-tasbeeh"><svg class="icon">
+                                <use href="#icon-reset"></use>
+                            </svg> Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quran View -->
+            <section id="quran-view" class="view">
+                <div id="quran-list-container">
+                    <div class="search-box">
+                        <svg class="icon search-icon">
+                            <use href="#icon-search"></use>
+                        </svg>
+                        <input type="text" id="surah-search" placeholder="Search Surah...">
+                    </div>
+                    <div class="surah-list" id="surah-list">
+                        <!-- Surahs will be injected here -->
+                    </div>
+                </div>
+                <div id="quran-reader-container" class="hidden">
+                    <div class="reader-header">
+                        <button id="back-to-list" class="action-btn">
+                            <svg class="icon">
+                                <use href="#icon-back"></use>
+                            </svg>
+                        </button>
+                        <h3 id="current-surah-name">Surah Name</h3>
+                        <div class="font-controls">
+                            <button id="font-decrease" class="action-btn"><svg class="icon">
+                                    <use href="#icon-font-down"></use>
+                                </svg></button>
+                            <button id="font-increase" class="action-btn"><svg class="icon">
+                                    <use href="#icon-font-up"></use>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <div class="verse-list" id="verse-list">
+                        <!-- Verses will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prayers View -->
+            <section id="prayers-view" class="view">
+                <div class="prayers-list" id="full-prayers-list">
+                    <!-- Prayer times will be injected here -->
+                </div>
+            </section>
+            <!-- Qibla View -->
+            <section id="qibla-view" class="view">
+                <div class="qibla-container">
+                    <div class="qibla-header">
+                        <svg class="icon">
+                            <use href="#icon-compass"></use>
+                        </svg>
+                        <h2>Qibla Direction</h2>
+                    </div>
+                    <p id="qibla-status">Waiting for compass...</p>
+                    <div class="compass-wrapper">
+                        <div class="compass-outer" id="compass-outer">
+                            <div class="compass-inner">
+                                <svg id="qibla-pointer" class="kaaba-pointer">
+                                    <use href="#icon-kaaba"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qibla-info">
+                        <p id="qibla-degrees">--°</p>
+                        <button id="calibrate-btn" class="calibrate-btn">Enable Compass</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchView('home')">
+                <svg class="icon">
+                    <use href="#icon-mosque"></use>
+                </svg>
+                <span>Home</span>
+            </div>
+            <div class="nav-item" onclick="switchView('prayers')">
+                <svg class="icon">
+                    <use href="#icon-clock"></use>
+                </svg>
+                <span>Prayers</span>
+            </div>
+            <div class="nav-item" onclick="switchView('quran')">
+                <svg class="icon">
+                    <use href="#icon-quran"></use>
+                </svg>
+                <span>Quran</span>
+            </div>
+            <div class="nav-item" onclick="switchView('tasbeeh')">
+                <svg class="icon">
+                    <use href="#icon-tasbeeh"></use>
+                </svg>
+                <span>Tasbeeh</span>
+            </div>
+            <div class="nav-item" onclick="switchView('settings')">
+                <svg class="icon">
+                    <use href="#icon-settings"></use>
+                </svg>
+                <span>Settings</span>
+            </div>
+        </nav>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

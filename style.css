@@ -1,0 +1,1049 @@
+:root {
+    --bg-dark: #0a0f0d;
+    --primary-emerald: #10b981;
+    --primary-gold: #fbbf24;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --glass-blur: blur(20px);
+}
+
+body.light-mode {
+    --bg-dark: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary-emerald: #059669;
+    --primary-gold: #d97706;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.app-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-bottom: 90px;
+}
+
+/* Background Blurs */
+.bg-blur {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.green-blur {
+    top: -50px;
+    right: -50px;
+    background: var(--primary-emerald);
+}
+
+.gold-blur {
+    bottom: -50px;
+    left: -50px;
+    background: var(--primary-gold);
+}
+
+/* Header */
+header {
+    margin-bottom: 24px;
+    padding-top: 20px;
+}
+
+.location-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-emerald);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.date-box {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+#gregorian-date {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#hijri-date {
+    font-size: 1.1rem;
+    color: var(--primary-gold);
+    font-family: 'Amiri', serif;
+}
+
+/* Cards */
+.main-card {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Custom Dropdown Styling */
+select {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--glass-blur);
+    color: var(--text-main);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%2310b981%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M6%209l6%206%206-6%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    transition: all 0.3s ease;
+}
+
+select:focus {
+    border-color: var(--primary-emerald);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+select option {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    padding: 12px;
+}
+
+body.light-mode select option {
+    background: #ffffff;
+    color: #000000;
+}
+
+#next-prayer-name {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+#next-prayer-time {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 8px 0;
+    background: linear-gradient(to bottom, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.secondary-card {
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--primary-gold);
+    font-size: 0.9rem;
+}
+
+.arabic {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    text-align: right;
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.reference {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.stat-item:active {
+    transform: scale(0.95);
+}
+
+.stat-item .icon {
+    color: var(--primary-emerald);
+}
+
+/* Views */
+#main-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+#main-content::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+.view {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .4s;
+}
+
+body.light-mode .slider {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary-emerald);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary-emerald);
+}
+
+input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Zakat Calculator */
+.zakat-header {
+    text-align: center;
+    padding: 24px 20px 10px;
+}
+
+.zakat-header .icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-gold);
+    margin-bottom: 12px;
+}
+
+.zakat-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 100px;
+}
+
+.zakat-form {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+body.light-mode .input-group input {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.input-group input:focus {
+    border-color: var(--primary-emerald);
+}
+
+.zakat-result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--primary-emerald);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Duas */
+.duas-header {
+    text-align: center;
+    padding: 24px 20px 10px;
+}
+
+.duas-header .icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-emerald);
+    margin-bottom: 12px;
+}
+
+.duas-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.duas-header .subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+.duas-category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px;
+}
+
+.dua-category-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.dua-category-card:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dua-category-card .icon {
+    width: 32px;
+    height: 32px;
+    color: var(--primary-gold);
+    margin-bottom: 12px;
+}
+
+.dua-category-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.dua-category-card p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.dua-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 100px;
+}
+
+.dua-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.dua-card .arabic {
+    font-size: var(--arabic-font-size, 2rem);
+    text-align: right;
+    margin-bottom: 16px;
+    line-height: 1.8;
+}
+
+.dua-card .transliteration {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.dua-card .translation {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.dua-card .reference {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--primary-emerald);
+    text-align: right;
+}
+
+/* Tasbeeh */
+.tasbeeh-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.dhikr-selector {
+    width: 80%;
+}
+
+.dhikr-selector select {
+    width: 100%;
+    padding: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: inherit;
+    outline: none;
+}
+
+.counter-display {
+    text-align: center;
+}
+
+#tasbeeh-count {
+    font-size: 6rem;
+    font-weight: 700;
+    display: block;
+}
+
+#tasbeeh-target {
+    color: var(--text-muted);
+}
+
+.tap-area {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--primary-emerald) 0%, transparent 70%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.tap-circle {
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--primary-emerald);
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+.tap-area:active .tap-circle {
+    transform: scale(0.9);
+    background: rgba(16, 185, 129, 0.3);
+}
+
+.tasbeeh-actions {
+    margin-top: 20px;
+}
+
+#reset-tasbeeh {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-muted);
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+}
+
+#reset-tasbeeh:active {
+    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#reset-tasbeeh .icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--card-border);
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: var(--primary-emerald);
+}
+
+.nav-item .icon {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-item span {
+    font-size: 0.75rem;
+}
+
+/* Prayer List View */
+.prayers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.prayer-row {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.prayer-row.highlight {
+    border-color: var(--primary-emerald);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.prayer-row span:first-child {
+    font-weight: 600;
+}
+
+.prayer-row span:last-child {
+    color: var(--primary-gold);
+    font-family: monospace;
+}
+
+/* Quran View */
+#quran-view.active {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.search-box .icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    color: var(--text-main);
+    outline: none;
+}
+
+.surah-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.surah-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.surah-number {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-emerald);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.surah-info {
+    flex: 1;
+}
+
+.surah-name-en {
+    font-weight: 600;
+    display: block;
+}
+
+.surah-detail {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.surah-name-ar {
+    font-family: 'Amiri', serif;
+    font-size: 1.2rem;
+    color: var(--primary-gold);
+}
+
+/* Reader */
+#quran-reader-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.reader-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 10px;
+    background: var(--card-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 0 0 20px 20px;
+}
+
+#current-surah-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:active {
+    transform: scale(0.9);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.font-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.font-controls .action-btn .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.verse-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 10px;
+}
+
+.basmala-header {
+    font-family: 'Amiri', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--primary-gold);
+    margin-bottom: 30px;
+    padding: 20px 0;
+}
+
+.basmala-header {
+    text-align: center;
+    font-family: 'Amiri', serif;
+    font-size: 2.8rem;
+    color: var(--primary-gold);
+    margin: 24px 0 32px;
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.3));
+}
+
+.mushaf-container {
+    direction: rtl;
+    text-align: justify;
+    line-height: 2.8;
+    color: var(--text-main);
+    padding-bottom: 40px;
+}
+
+.verse-text {
+    font-family: 'Amiri', serif;
+    font-size: var(--arabic-font-size, 2.2rem);
+    word-spacing: 4px;
+    transition: font-size 0.3s ease;
+}
+
+.ayah-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--primary-emerald);
+    border-radius: 50%;
+    font-size: 1rem;
+    color: var(--primary-emerald);
+    margin: 0 8px;
+    font-family: 'Outfit', sans-serif;
+    vertical-align: middle;
+    transform: translateY(-4px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Qibla */
+#qibla-view.active {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.qibla-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-bottom: 20px;
+}
+
+.qibla-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary-gold);
+}
+
+.qibla-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#qibla-status {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+    margin: -10px 0 10px;
+}
+
+.compass-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-outer {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--card-border);
+    position: relative;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    background: radial-gradient(circle, var(--card-bg) 0%, transparent 100%);
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Add N/E/S/W markings */
+.compass-outer::before {
+    content: 'N';
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.compass-outer::after {
+    content: 'S';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.compass-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    z-index: 2;
+    border: 2px solid var(--card-border);
+}
+
+.kaaba-pointer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-emerald);
+    filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+    z-index: 1;
+    transform-origin: center center;
+}
+
+.kaaba-pointer svg {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -100px;
+    left: -40px;
+}
+
+.qibla-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+#qibla-degrees {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(to bottom, #fff, #888);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.calibrate-btn {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--primary-emerald);
+    color: var(--primary-emerald);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calibrate-btn:active {
+    transform: scale(0.95);
+    background: rgba(16, 185, 129, 0.2);
+}
+
+.calibrate-btn.hidden {
+    display: none;
+}
+
+/* Mobile specific fixes */
+@media (max-width: 380px) {
+    #next-prayer-time {
+        font-size: 3rem;
+    }
+}
