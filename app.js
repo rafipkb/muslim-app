@@ -310,14 +310,34 @@ function detectLocation() {
                 fetchPrayerTimes();
                 initQibla();
             } catch (e) {
+                console.error("Reverse geocode failed:", e);
                 fetchPrayerTimes();
                 initQibla();
             }
-        }, () => {
+        }, (error) => {
+            let errorMsg = "Unable to get location. Defaulting to London.";
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMsg = "Location permission denied. Please enable Location in your device or browser settings for accurate prayer times.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMsg = "Location information is unavailable. Check if GPS is enabled on your device.";
+                    break;
+                case error.TIMEOUT:
+                    errorMsg = "The request to get user location timed out. Trying again might work.";
+                    break;
+            }
+            alert(errorMsg);
+            console.error("Geolocation Error:", errorMsg);
             fetchPrayerTimes();
             initQibla();
+        }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
         });
     } else {
+        alert("Geolocation is not supported by this browser. Defaulting to London.");
         fetchPrayerTimes();
         initQibla();
     }
